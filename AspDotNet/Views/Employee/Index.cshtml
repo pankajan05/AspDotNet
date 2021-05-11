@@ -11,19 +11,20 @@
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/jquery-3.4.1.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
-<script src="~/Scripts/Controller/EmployeeController.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/Controller/EmployeeController.js"></script>
 </head>
-<body ng-app>
+<body>
 <div class="container" ng-app="myApp">
     <div ng-controller="employeeCtrl">
-        <table>
+        <table class="table">
             <thead>
                 <th>Employee Name</th>
                 <th>Employee Address</th>
                 <th>Employee Salary</th>
             </thead>
                 <tr ng-repeat="employee in employees">
-                    <td>{{employee.Name}}</td>
+                    <td>{{employee.EmployeeName}}</td>
                     <td>{{employee.Address}}</td>
                     <td>{{employee.Salary}}</td>
                 </tr>

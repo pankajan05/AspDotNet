@@ -1,13 +1,15 @@
 ﻿var myApp = angular.module("myApp", [])
-                    .controller("employeeCtrl",
-                        function($scope, $http) {
-                            $http.get("https://localhost:44378/employee/getEmployee")
-                                .success(function(result) {
-                                    $scope.employees = result;
-                                    console.log(result);
-                                })
-                                .error(function(error) {
-                                    console.log(error);
-                                });
+    .controller("employeeCtrl", function ($scope, $http) {
 
-                        });
+        $http({
+                method: 'GET',
+                url: "/employee/getEmployee"
+            })
+            .then( function(result) {
+                $scope.employees = result.data;
+                console.log($scope.employees);
+            },function (error) {
+                console.log(error);
+            });
+
+    });
