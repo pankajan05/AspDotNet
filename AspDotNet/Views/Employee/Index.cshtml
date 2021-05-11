@@ -8,10 +8,28 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Employee</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/Controller/EmployeeController.js"></script>
 </head>
-<body>
-<div>
-    <p>this is from employee view</p>
+<body ng-app>
+<div class="container" ng-app="myApp">
+    <div ng-controller="employeeCtrl">
+        <table>
+            <thead>
+                <th>Employee Name</th>
+                <th>Employee Address</th>
+                <th>Employee Salary</th>
+            </thead>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.Name}}</td>
+                    <td>{{employee.Address}}</td>
+                    <td>{{employee.Salary}}</td>
+                </tr>
+        
+            </table>
+    </div>
 
 </div>
 </body>
